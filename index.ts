@@ -1,5 +1,7 @@
 import crawler from "./crawler";
 import sendMessage from "./slack";
+import {Handler} from 'aws-lambda';
+import end from './crawler/end';
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
 
@@ -23,5 +25,3 @@ export const hello = async (event: any, context: any) => {
    }
   
 }
-
-hello(0,0);
