@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "dotenv": "^8.2.0",
-    "aws-lambda": "^1.0.6",
     "axios": "^0.21.0",
     "cheerio": "^1.0.0-rc.3",
     "@slack/webhook": "^5.0.3"

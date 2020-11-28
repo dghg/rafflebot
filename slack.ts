@@ -1,8 +1,6 @@
 import { IncomingWebhook } from "@slack/webhook";
-import dotenv from "dotenv";
 import { crawlerReturnType } from "./crawler/types";
 
-dotenv.config();
 
 const url = process.env.SLACK_WEBHOOK_URL as string;
 const webhook = new IncomingWebhook(url);
