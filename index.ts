@@ -2,23 +2,26 @@ import crawler from "./crawler";
 import sendMessage from "./slack";
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
-export const hello= async (event: any, context: any) => {
-  crawler.forEach((result) => {
-    result().
-    then(async (_) => {
-      _ && (await sendMessage(_));
-    })
-    .then(()=>{
-      return {
-        statusCode: 200,
-        body: JSON.stringify({message: "Success"}),
+
+export const hello = async (event: any, context: any) => {
+  try {
+    for (let getInfo of crawler) {
+      const result = await getInfo();
+      if(result) {
+        await sendMessage(result);
       }
-    })
-    .catch((err : Error)=>{
-      return {
-        statusCode: 403,
-        body: err.message,
-      }
-    })
-  })
-};
+    }
+    return {
+      statusCode: 200,
+      body: JSON.stringify({message: 'SUCCESS'}),
+    }
+   } catch (err) {
+     return {
+       statusCode: 403,
+       body: JSON.stringify({message : err.message}),
+     }   
+   }
+  
+}
+
+hello(0,0);
