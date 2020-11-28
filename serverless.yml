@@ -63,9 +63,7 @@ functions:
     handler: index.hello
 
     events:
-      - http:
-          path: hello
-          method: get
+      - schedule: cron(0 8 * * ? *)
 #      - http:
 #          path: users/create
 #          method: get
