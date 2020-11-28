@@ -13,3 +13,7 @@ export const urlTocheerio = async (url: string, config: AxiosRequestConfig = {})
     return undefined;
   }
 };
+
+export const getToday: () => string = () => {
+  return new Date().getDate().toLocaleString();
+}

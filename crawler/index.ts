@@ -1,5 +1,5 @@
 import NikeCrawler from "./nike";
-import woCrawler from "./worskout";
-const crawler = [NikeCrawler];
+import endCrawler from './end';
+const crawler = [NikeCrawler, endCrawler];
 
 export default crawler;

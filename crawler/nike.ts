@@ -1,7 +1,7 @@
-import { urlTocheerio } from "./middleware";
+import { urlTocheerio, getToday } from "./middleware";
 import cheerio from "cheerio";
 import { SubjectInfo, crawlerReturnType } from "./types";
-const TODAY = new Date().getDate().toLocaleString();
+const TODAY = getToday();
 
 const NikeCrawler: () => Promise<crawlerReturnType | undefined> = async () => {
   try {
