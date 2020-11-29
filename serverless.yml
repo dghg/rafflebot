@@ -21,6 +21,7 @@ service: rafflebot-dev
 frameworkVersion: "2"
 plugins:
   - serverless-plugin-typescript
+  - serverless-local-schedule
 provider:
   name: aws
   runtime: nodejs12.x
@@ -63,7 +64,9 @@ functions:
     handler: index.hello
 
     events:
-      - schedule: cron(0 8 * * ? *)
+      - schedule:
+          rate: cron(0 8 * * ? *)
+          timezone: Asia/Seoul
 #      - http:
 #          path: users/create
 #          method: get
