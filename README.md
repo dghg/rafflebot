@@ -20,3 +20,23 @@ Content-type: application/json
    "text": "Hello, world."
 }
 ```
+
+# AWS 배포
+```
+npm install
+```
+
+- serverless
+```
+npm install -g serverless
+serverless config credentials --provider aws --key [KEY] --secret [SECRET]
+```
+
+- 배포
+```
+serverless deploy
+```
+- 실행
+```
+serverless invoke -f hello
+```
