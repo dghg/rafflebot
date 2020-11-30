@@ -17,7 +17,7 @@ const sendMessage = async ({ result, pageInfo }: crawlerReturnType) => {
   });
 
   try {
-    await webhook.send({
+    result && await webhook.send({
       text: `오늘의 ${pageInfo} 발매계획입니다.`,
       attachments: [
         {

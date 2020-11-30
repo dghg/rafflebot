@@ -12,7 +12,7 @@ const NikeCrawler: () => Promise<crawlerReturnType | undefined> = async () => {
     const items = $("li.launch-list-item");
     const result: SubjectInfo[] = [];
     items.each((idx, el) => {
-      if (($(el).find(".day").html() as string) > TODAY) {
+      if (($(el).find(".day").html() as string) === TODAY) {
         // Check that Release Date)
         const title = $(el).find(".txt-description").text();
         const info = $(el).find(".txt-subject").text();
